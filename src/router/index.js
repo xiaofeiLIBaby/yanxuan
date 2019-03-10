@@ -1,15 +1,33 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+import HomePage from'../pages/homePage/HomePage'
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path:'/',
+      redirect:'/homePage'
+    },
+    {
+      path:'/homePage',
+      component:'HomePage',
+      meta:{
+        showFooter:true
+      }
     }
+   /* {
+      path: '/',
+      redirect: '/msite'
+    },*/
+   /* {
+      path: '/msite',
+      component: Msite,
+      meta:{
+        showFooter:true
+      }
+    }*/
   ]
 })
