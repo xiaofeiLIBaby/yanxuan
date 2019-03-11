@@ -36,7 +36,7 @@
     <GoodsAreaTwo/>
     <Interval/>
     <!--限时购-->
-    <div class="limit">
+    <div class="limit" v-if="getLimit">
       <div class="timeWrap">
         <div>限时购</div>
         <div class="time">
@@ -61,8 +61,8 @@
       <ul class="outList">
         <li v-for="(item,index) in getGoodsList" :key="index">
           <img :src="item.titlePicUrl" alt="">
-          <div class="scrollWraper">
-            <ul class="insideList" v-if="item.itemList">
+          <div class="baseScrollWraper" :class="`scrollWraper${index}`">
+            <ul class="insideList">
               <li v-for="(item2,index) in item.itemList" :key=index>
                 <img :src="item2.listPicUrl" alt="">
                 <span class="ellipsis">{{item2.name}}</span>
@@ -125,10 +125,12 @@
     watch:{
       getGoodsList(){
         this.$nextTick(()=>{
-          new BScroll('.scrollWraper',{
-            scrollX: true,
-            click: true
-          })
+          for (let i = 0; i < this.getGoodsList.length; i++) {
+            new BScroll(`.scrollWraper${i}`,{
+              scrollX: true,
+              click: true
+            })
+          }
         })
 
 
@@ -313,7 +315,7 @@
             width 100%
             height 400px
 
-        .scrollWraper
+        .baseScrollWraper
           overflow hidden
           .insideList
             display flex
