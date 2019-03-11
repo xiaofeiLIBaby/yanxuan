@@ -1,9 +1,3 @@
-<template>
-    <div></div>
-</template>
-<script>
-    export default {}
-</script>
-<style lang="stylus" rel="stylesheet/stylus" scoped>
-
-</style>
+export const RECEIVE_CATEGORYS='receive_categorys'
+export const RECEIVE_HOMEINFO='receive_homeinfo'
+export const RECEIVE_CLASSIFY='receive_classify'

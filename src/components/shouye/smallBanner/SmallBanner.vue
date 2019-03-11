@@ -10,7 +10,7 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
 .banner
-  width 100%
+  overflow hidden
   height 160px
   margin-top 28px
   a
