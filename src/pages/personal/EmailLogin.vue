@@ -1,7 +1,7 @@
 <template>
   <div>
     <LoginTemplate :loginInfo="loginInfo">
-      <div class="getCode" slot="getCode">获取验证码</div>
+      <!--<div class="getCode" slot="getCode">获取验证码</div>-->
       <div class="register" slot="register">注册账号></div>
     </LoginTemplate>
   </div>

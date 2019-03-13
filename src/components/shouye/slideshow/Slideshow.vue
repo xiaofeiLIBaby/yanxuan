@@ -63,10 +63,7 @@
         new Swiper('.swiper-container', {
           pagination: {
             el: '.swiper-pagination',
-            deep:true
           },
-          // 如果需要前进后退按钮
-
         })
       })
 

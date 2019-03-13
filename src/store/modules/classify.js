@@ -12,7 +12,6 @@ const mutations = {
 const actions = {
   async getClassify({commit},callback) {
     const result = await reqClassify()
-    console.log(result)
     if (result.code === 0) {
       commit(RECEIVE_CLASSIFY, result.data)
     }

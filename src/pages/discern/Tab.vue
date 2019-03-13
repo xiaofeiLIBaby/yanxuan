@@ -1,16 +1,16 @@
 <template>
     <div>
-      <div class="loopWrap">
-        <div v-for="(item,index) in recommendData" :key="index" class="one">
+      <div class="loopWrap" v-if="+$route.params.id === 0">
+        <div v-for="(item,index) in recommendData" class="one">
           <ul class="list1">
-            <li v-for="(item2,index) in item.topics">
+            <li v-for="(item2,index) in item.topics" :key="index">
               <Auto v-if="item2.style===1" :item2="item2"/>
               <AutoTwo v-if="item2.style===2" :item2="item2"/>
               <Interval/>
             </li>
           </ul>
         </div>
-        <div v-for="(item,index) in autoData" :key="index" class="two">
+        <div v-for="(item,index) in autoData" class="two">
           <ul class="list2">
             <li v-for="(item2,index) in item.topics" :key="index">
               <Auto v-if="item2.style===1" :item2="item2"/>
@@ -21,6 +21,18 @@
             </li>
           </ul>
         </div>
+      </div>
+      <!--晒单-->
+      <div v-if="+$route.params.id === 3">
+          <div>
+            轮播图
+          </div>
+          <div>
+            <div>头部</div>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
       </div>
     </div>
 </template>
@@ -41,17 +53,12 @@
     },
     computed:{
       ...mapState({
-        tabList:state=>state.Discern.tabList,
         autoData:state=>state.Discern.autoData,
         recommendData:state=>state.Discern.recommendData
       })
     },
-    mounted() {
-      this.$store.dispatch('getTabList')
-      this.$store.dispatch('getAutoData')
-      this.$store.dispatch('getrecommendData')
-    }
-  
+
+
     }
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>

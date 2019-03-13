@@ -7,7 +7,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(item,index) in homePagesArr" :key="index">
             <div class="smallList" v-for="(smallItem,index) in item" :key="index">
-              <img :src="smallItem.listPicUrl" alt="">
+              <img v-lazy="smallItem.listPicUrl" alt="">
               <div class="text">
                 <span>{{smallItem.name}}</span>
                 <span class="pri">￥{{smallItem.retailPrice}}</span>
