@@ -5,7 +5,7 @@
         <ul class="tableList" v-if="flag">
           <li v-for="(item,index) in homePages.kingKongModule.kingKongList" :key="index">
             <a href="javascript:''">
-              <img :src="item.picUrl" alt="">
+              <img v-lazy="item.picUrl" alt="">
               <span>{{item.text}}</span>
             </a>
           </li>

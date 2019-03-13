@@ -3,7 +3,7 @@
     <ul>
       <li @click="goTo('/')" :class="{on:$route.path==='/homePage'}">首页</li>
       <li @click="goTo('/classify/catList?id=1022001')" :class="{on:$route.path==='/classify/catList'}">分类</li>
-      <li @click="goTo('/discern')" :class="{on:$route.path==='/discern'}">识物</li>
+      <li @click="goTo('/discern')" :class="{on:reg.test($route.path)}">识物</li>
       <li @click="goTo('/cart')" :class="{on:$route.path==='/cart'}">购物车</li>
       <li @click="goTo('/personal')">个人</li>
     </ul>
@@ -11,7 +11,14 @@
 
 </template>
 <script>
+
   export default {
+    data(){
+      return{
+        reg:/discern/
+      }
+    },
+
     methods:{
       goTo(path){
         this.$router.replace(path)

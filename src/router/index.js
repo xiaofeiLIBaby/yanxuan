@@ -10,6 +10,7 @@ import CatList from '../pages/classify/CatList'
 import Search from '../pages/search/Search'
 import PhoneLogin from'../pages/personal/PhoneLogin'
 import EmainLogin from '../pages/personal/EmailLogin'
+import Tab from '../pages/discern/Tab'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -53,7 +54,17 @@ export default new VueRouter({
       component: Discern,
       meta:{
         showFooter:true
-      }
+      },
+       redirect: '/discern/tab0',
+      children:[
+        {
+          path:'/discern/tab:id',
+          component:Tab,
+          meta:{
+            showFooter:true
+          },
+        }
+      ]
     },
     {
       path:'/cart',

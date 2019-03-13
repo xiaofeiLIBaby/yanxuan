@@ -1,11 +1,11 @@
 <template>
     <div class="catList" v-show="classify.categoryL1List">
       <div class="banner" v-if="classify.currentCategory">
-        <img :src="classify.currentCategory.wapBannerUrl" >
+        <img v-lazy="classify.currentCategory.wapBannerUrl" >
       </div>
       <ul>
         <li v-for="(item,index) in arrFor" :key="index">
-          <img :src="item.bannerUrl" alt="">
+          <img v-lazy="item.bannerUrl" alt="">
           <span>{{item.name}}</span>
         </li>
       </ul>

@@ -273,7 +273,7 @@
             background rgba(0, 0, 0, .8)
             padding 4px
             color #ffffff
-            margin 0 5px
+            margin 0 10px
 
         .more
           position absolute
